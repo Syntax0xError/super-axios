@@ -87,7 +87,7 @@ const response = await api.get("https://jsonplaceholder.typicode.com/todos/1", {
   },
 });
 
-console.log(response.data);
+console.log(response);
 ```
 
 ---
@@ -110,7 +110,7 @@ const response = await api.post(
   }
 );
 
-console.log(response.data);
+console.log(response);
 ```
 
 ---
@@ -127,7 +127,7 @@ const response = await api.delete(
   }
 );
 
-console.log(response.data);
+console.log(response);
 ```
 
 ---
@@ -141,7 +141,7 @@ const response = await api.get("https://jsonplaceholder.typicode.com/todos/1", {
   },
 });
 
-console.log(response.data);
+console.log(response);
 ```
 
 ---
