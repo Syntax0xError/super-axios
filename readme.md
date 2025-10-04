@@ -1,4 +1,4 @@
-# @qbit/super-axios
+# @qbit-labs/super-axios
 <!-- 
 [![npm version](https://img.shields.io/npm/v/super-axios.svg?style=flat-square)](https://www.npmjs.com/package/super-axios)
 [![npm downloads](https://img.shields.io/npm/dm/super-axios.svg?style=flat-square)](https://www.npmjs.com/package/super-axios)
@@ -45,15 +45,15 @@ Super-Axios drastically improves response times on repeated requests compared to
 ## 📦 Installation
 
 ```bash
-pnpm install @qbit/super-axios
+pnpm install @qbit-labs/super-axios
 ```
 
 Or with npm/yarn:
 
 ```bash
-npm install @qbit/super-axios
+npm install @qbit-labs/super-axios
 # or
-yarn add @qbit/super-axios
+yarn add @qbit-labs/super-axios
 ```
 
 ---
@@ -62,7 +62,7 @@ yarn add @qbit/super-axios
 
 ```ts
 import axios from "axios";
-import { createSuperAxios } from "@qbit/super-axios";
+import { createSuperAxios } from "@qbit-labs/super-axios";
 
 // Create a super-axios instance
 const api = createSuperAxios(axios, {
@@ -194,7 +194,7 @@ await api.clear();
 ---
 
 ## ✅ Summary
-- Install with `pnpm install @qbit/super-axios`  
+- Install with `pnpm install @qbit-labs/super-axios`  
 - Create a wrapper with `createSuperAxios`  
 - Use `cacheOptions` to control per-request caching  
 - Works the same as axios but **faster with caching**  

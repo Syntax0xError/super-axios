@@ -1,5 +1,5 @@
 {
-  "name": "@qbit/super-axios",
+  "name": "@qbit-labs/super-axios",
   "version": "1.0.0",
   "description": "A lightweight Axios wrapper with built-in caching using IndexedDB or localStorage. Perfect for faster apps and offline-friendly requests.",
   "type": "module",
