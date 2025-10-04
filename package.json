@@ -1,0 +1,59 @@
+{
+  "name": "@qbit/super-axios",
+  "version": "1.0.0",
+  "description": "A lightweight Axios wrapper with built-in caching using IndexedDB or localStorage. Perfect for faster apps and offline-friendly requests.",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx,.js",
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syntax0xError/super-axios.git"
+  },
+  "keywords": [
+    "axios",
+    "cache",
+    "http-client",
+    "indexeddb",
+    "localstorage",
+    "offline",
+    "request",
+    "super-axios"
+  ],
+  "author": {
+    "name": "Oussema AMRI",
+    "email": "oussemamri2013@gmail.com",
+    "url": "https://github.com/syntax0xError"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/syntax0xError/super-axios/issues"
+  },
+  "homepage": "https://github.com/syntax0xError/super-axios#readme",
+  "devDependencies": {
+    "axios": "^1.12.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^2.1.8",
+    "eslint": "^9.11.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
