@@ -183,6 +183,16 @@ await api.revalidate("custom-post-key");
 
 ---
 
+## 🗑️ Cleanup (optional)
+
+If you need to **force clear** the cache manually:  
+
+```ts
+await api.clear();
+```
+
+---
+
 ## ✅ Summary
 - Install with `pnpm install @qbit/super-axios`  
 - Create a wrapper with `createSuperAxios`  
