@@ -21,7 +21,9 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "declaration": true
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true
   },
   "include": ["src"]
 }

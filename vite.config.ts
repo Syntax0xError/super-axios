@@ -1,6 +1,6 @@
 // vite.config.ts
 import { defineConfig } from "vite";
-import dts from 'vite-plugin-dts'
+import dts from "vite-plugin-dts";
 // Use URL and import.meta.url for path resolution in Vite config
 
 export default defineConfig({
@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       // Main entry point for the library
-      entry: new URL("src/main.ts", import.meta.url).pathname,
+      entry: new URL("src/index.ts", import.meta.url).pathname,
       name: "SuperAxios", // UMD/IIFE global variable name
       formats: ["es", "cjs", "umd"], // Support ESM, CJS, and UMD
     },

@@ -9,7 +9,7 @@
  */
 
 import axios from "axios";
-import { createSuperAxios } from "../main";
+import { createSuperAxios } from "..";
 
 // Create a Super-Axios instance
 const api = createSuperAxios(axios, {
