@@ -112,21 +112,21 @@ function createSuperAxios(
   const { defaultCacheOptions } = config;
 
   // Wrap each HTTP method with caching
-  instance.get = <T = any, D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_get, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
+  instance.get = <D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_get, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
 
-  instance.delete = <T = any, D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_delete, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
+  instance.delete = <D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_delete, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
 
-  instance.head = <T = any, D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_head, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
+  instance.head = <D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_head, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
 
-  instance.options = <T = any, D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_options, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
+  instance.options = <D = any>(url: string, config?: SuperAxiosRequestConfig<D>) => withCache(_options, storage, resolveCacheOptions(defaultCacheOptions, url, undefined, config), [url, config]);
 
-  instance.post = <T = any, D = any>(url: string, data?: D, config?: SuperAxiosRequestConfig<D>) => withCache(_post, storage, resolveCacheOptions(defaultCacheOptions, url, data, config), [url, data, config]);
+  instance.post = <D = any>(url: string, data?: D, config?: SuperAxiosRequestConfig<D>) => withCache(_post, storage, resolveCacheOptions(defaultCacheOptions, url, data, config), [url, data, config]);
 
-  instance.put = <T = any, D = any>(url: string, data?: D, config?: SuperAxiosRequestConfig<D>) => withCache(_put, storage, resolveCacheOptions(defaultCacheOptions, url, data, config), [url, data, config]);
+  instance.put = <D = any>(url: string, data?: D, config?: SuperAxiosRequestConfig<D>) => withCache(_put, storage, resolveCacheOptions(defaultCacheOptions, url, data, config), [url, data, config]);
 
-  instance.patch = <T = any, D = any>(url: string, data?: D, config?: SuperAxiosRequestConfig<D>) => withCache(_patch, storage, resolveCacheOptions(defaultCacheOptions, url, data, config), [url, data, config]);
+  instance.patch = <D = any>(url: string, data?: D, config?: SuperAxiosRequestConfig<D>) => withCache(_patch, storage, resolveCacheOptions(defaultCacheOptions, url, data, config), [url, data, config]);
 
-  instance.request = <T = any, D = any>(config: SuperAxiosRequestConfig<D>) => withCache(_request, storage, resolveCacheOptions(defaultCacheOptions, config.url || "unknown", config.data, config), [config]);
+  instance.request = <D = any>(config: SuperAxiosRequestConfig<D>) => withCache(_request, storage, resolveCacheOptions(defaultCacheOptions, config.url || "unknown", config.data, config), [config]);
 
   // Cache management utilities
   instance.revalidate = async (...keys: string[]) => {

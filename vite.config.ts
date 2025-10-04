@@ -1,8 +1,10 @@
 // vite.config.ts
 import { defineConfig } from "vite";
+import dts from 'vite-plugin-dts'
 // Use URL and import.meta.url for path resolution in Vite config
 
 export default defineConfig({
+  plugins: [dts()],
   build: {
     lib: {
       // Main entry point for the library

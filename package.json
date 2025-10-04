@@ -1,6 +1,6 @@
 {
   "name": "@qbit-labs/super-axios",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight Axios wrapper with built-in caching using IndexedDB or localStorage. Perfect for faster apps and offline-friendly requests.",
   "type": "module",
   "main": "dist/index.cjs",
@@ -45,10 +45,11 @@
   "homepage": "https://github.com/syntax0xError/super-axios#readme",
   "devDependencies": {
     "axios": "^1.12.2",
+    "eslint": "^9.11.1",
     "typescript": "~5.9.3",
     "vite": "^7.1.7",
-    "vitest": "^2.1.8",
-    "eslint": "^9.11.1"
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^2.1.8"
   },
   "files": [
     "dist"
