@@ -1,8 +1,8 @@
 # @qbit-labs/super-axios
-<!-- 
-[![npm version](https://img.shields.io/npm/v/super-axios.svg?style=flat-square)](https://www.npmjs.com/package/super-axios)
-[![npm downloads](https://img.shields.io/npm/dm/super-axios.svg?style=flat-square)](https://www.npmjs.com/package/super-axios)
-[![license](https://img.shields.io/npm/l/super-axios.svg?style=flat-square)](LICENSE) -->
+
+[![npm version](https://img.shields.io/npm/v/@qbit-labs/super-axios.svg?style=flat-square)](https://www.npmjs.com/package/@qbit-labs/super-axios)
+[![npm](https://img.shields.io/npm/dt/@qbit-labs/super-axios.svg)](https://www.npmjs.com/package/@qbit-labs/super-axios)
+[![license](https://img.shields.io/npm/l/@qbit-labs/super-axios.svg?style=flat-square)](LICENSE)
 
 A lightweight wrapper around [Axios](https://axios-http.com/) with **built-in caching**.  
 It stores API responses in **IndexedDB** (if available) or falls back to **localStorage**.  
