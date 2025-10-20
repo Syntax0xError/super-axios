@@ -1,7 +1,12 @@
-import { getHash } from "../utils/utils";
 import type { StorageAdapter } from "./adapter";
+import type { StorageDefaultOptions } from "../types";
+import { getHash } from "../utils/utils";
 
 export class LocalStorageAdapter implements StorageAdapter {
+  private readonly defaultOptions: StorageDefaultOptions;
+  constructor(defaultOptions: StorageDefaultOptions) {
+    this.defaultOptions = defaultOptions;
+  }
   async getItem<T>(key: string): Promise<T | null> {
     const __key = getHash(key);
     const value = localStorage.getItem(__key);
@@ -25,13 +30,7 @@ export class LocalStorageAdapter implements StorageAdapter {
 
   async setItem<T>(key: string, value: T, staleTime?: number): Promise<boolean> {
     const __key = getHash(key);
-    if (staleTime) {
-      const record = { value, timestamp: Date.now(), staleTime };
-      localStorage.setItem(__key, JSON.stringify(record));
-      return true;
-    }
-
-    const record = { value, timestamp: Date.now(), staleTime };
+    const record = { value, timestamp: Date.now(), staleTime: staleTime ? staleTime : this.defaultOptions.staleTime };
     localStorage.setItem(__key, JSON.stringify(record));
 
     return true;

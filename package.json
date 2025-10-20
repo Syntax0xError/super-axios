@@ -57,5 +57,8 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "ioredis": "^5.8.1"
   }
 }

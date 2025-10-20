@@ -10,7 +10,7 @@ export default defineConfig({
       // Main entry point for the library
       entry: new URL("src/index.ts", import.meta.url).pathname,
       name: "SuperAxios", // UMD/IIFE global variable name
-      formats: ["es", "cjs", "umd"], // Support ESM, CJS, and UMD
+      formats: ["es", "cjs"], // Support ESM, CJS, and UMD
     },
     rollupOptions: {
       // Externalize dependencies to avoid bundling axios

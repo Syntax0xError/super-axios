@@ -1,10 +1,16 @@
-import { getHash } from "../utils/utils";
 import type { StorageAdapter } from "./adapter";
+import type { StorageDefaultOptions } from "../types";
+import { getHash } from "../utils/utils";
 
 export class IndexDbAdapter implements StorageAdapter {
   private readonly DB_NAME = import.meta.env.VITE_INDEX_DB_STORAGE_NAME;
   private readonly STORE_NAME = import.meta.env.VITE_INDEX_DB_STORAGE_NAME_OBJECT_STORE || "cache";
   private readonly DB_VERSION = parseInt(import.meta.env.VITE_INDEX_DB_STORAGE_NAME_VERSION || "1", 10);
+  private readonly defaultOptions: StorageDefaultOptions;
+
+  constructor(defaultOptions: StorageDefaultOptions) {
+    this.defaultOptions = defaultOptions;
+  }
 
   private createConnection(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
@@ -49,8 +55,7 @@ export class IndexDbAdapter implements StorageAdapter {
     return new Promise((resolve, reject) => {
       const tx = db.transaction(this.STORE_NAME, "readwrite");
       const store = tx.objectStore(this.STORE_NAME);
-      const defaultTimeStale = parseInt(import.meta.env.VITE_DEFAULT_TIME_STALE || "300000", 10);
-      const record = { value, timestamp: Date.now(), staleTime: staleTime ?? defaultTimeStale };
+      const record = { value, timestamp: Date.now(), staleTime: staleTime ?? this.defaultOptions.staleTime };
       const request = store.put(record, __key);
 
       request.onsuccess = () => resolve(true);
